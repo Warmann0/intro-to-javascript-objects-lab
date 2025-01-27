@@ -120,7 +120,7 @@ Exercise 5
 
 
 Solve Exercise 5 here:
-*/
+
 
 
 
@@ -153,3 +153,49 @@ pokemon[142].starter = true // making sure the "starter always set true"
 
 
 console.log(game.party)
+
+/*
+Exercise 6
+1. Set the `completed` property to true for gyms with a difficulty below 3.
+2. Think about how you'd loop through the `gyms` array to check and update the `completed` property.
+
+
+Solve Exercise 6 here:
+*/
+
+const game = {
+  party: [],
+  gyms: [
+    { location: "Pewter City", completed: false, difficulty: 1 },
+    { location: "Cerulean City", completed: false, difficulty: 2 },
+    { location: "Vermilion City", completed: false, difficulty: 3 },
+    { location: "Celadon City", completed: false, difficulty: 4 },
+    { location: "Fuchsia City", completed: false, difficulty: 5 },
+    { location: "Saffron City", completed: false, difficulty: 6 },
+    { location: "Cinnabar Island", completed: false, difficulty: 7 },
+    { location: "Viridian City", completed: false, difficulty: 8 },
+  ],
+  items: [
+    { name: "potion", quantity: 4 },
+    { name: "pokeball", quantity: 8 },
+    { name: "rare candy", quantity: 99 },
+  ],
+}
+game.difficulty = "Easy";
+
+game.party.push(pokemon[53], pokemon[0], pokemon[142]) 
+
+game.gyms.forEach((gym) => {
+  if (gym.difficulty < 3) {
+    gym.completed = true;
+  }
+});
+
+
+
+pokemon[53].starter = true // making sure the "starter always set true"
+pokemon[0].starter = true // making sure the "starter always set true"
+pokemon[142].starter = true // making sure the "starter always set true"
+
+
+console.log(game.gyms)
