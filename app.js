@@ -477,6 +477,92 @@ Also, log the `game.items` array to confirm that the pokeball quantity is being 
 
 Solve Exercise 11 here:
 */
+/*
+
+const game = {
+  party: [],
+  gyms: [
+    { location: "Pewter City", completed: false, difficulty: 1 },
+    { location: "Cerulean City", completed: false, difficulty: 2 },
+    { location: "Vermilion City", completed: false, difficulty: 3 },
+    { location: "Celadon City", completed: false, difficulty: 4 },
+    { location: "Fuchsia City", completed: false, difficulty: 5 },
+    { location: "Saffron City", completed: false, difficulty: 6 },
+    { location: "Cinnabar Island", completed: false, difficulty: 7 },
+    { location: "Viridian City", completed: false, difficulty: 8 },
+  ],
+  items: [
+    { name: "potion", quantity: 4 },
+    { name: "pokeball", quantity: 8 },
+    { name: "rare candy", quantity: 99 },
+  ],
+}
+game.difficulty = "Easy";
+
+game.party.push(pokemon[53], pokemon[0], pokemon[142])
+
+
+
+
+/////////////////////////////////////////////
+
+game.gyms.forEach((gym) => {
+  if (gym.difficulty < 3) {
+    gym.completed = true; ///////////////////// this code markes completed as true
+  }
+});
+
+////////////////////////////
+
+game.party.splice(0, 1, pokemon[game.party[0].number]) ////////////// this makes it evolve
+game.party.splice(1, 1, pokemon[game.party[1].number]) ////////////// this makes it evolve
+game.party.splice(2, 1, pokemon[game.party[2].number]) ////////////// this makes it evolve
+
+
+
+pokemon[53].starter = true // making sure the "starter always set true"
+pokemon[0].starter = true // making sure the "starter always set true"
+pokemon[142].starter = true // making sure the "starter always set true"
+
+
+game.party.forEach(pokemon => {
+    (pokemon.starter) 
+   console.log(pokemon.name);
+ }
+);
+
+
+
+game.catchPokemon = function(pokemonObj) {
+  game.party.push(pokemonObj);
+}
+
+
+game.catchPokemon(cry);
+console.log(game.party);
+
+
+
+
+game.catchPokemon = (pokemonObj) => {
+  let cry = game.items.find(item => item.name === "cry");
+  game.party.push(pokemonObj);
+  cry.quantity--;
+};
+
+
+/*
+Exercise 11
+1. Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify it so that it also decreases the number of pokeballs in your inventory each time you catch a Pokémon.
+2. How will you find and update the quantity of pokeballs in the `game.items` array?
+
+Tips:
+For this exercise, it's okay to have a negative number of pokeballs.
+After updating the method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
+Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
+
+Solve Exercise 11 here:
+*/
 
 
 const game = {
@@ -549,3 +635,5 @@ game.catchPokemon = (pokemonObj) => {
   game.party.push(pokemonObj);
   cry.quantity--;
 };
+
+console.log(cry.item)
