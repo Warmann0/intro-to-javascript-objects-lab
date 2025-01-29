@@ -276,7 +276,7 @@ Exercise 8
 2. Consider using a loop or an array method to access each Pokémon's name.
 
 Solve Exercise 8 here:
-*/
+
 
 const game = {
   party: [],
@@ -325,4 +325,66 @@ pokemon[142].starter = true // making sure the "starter always set true"
 
 
 console.log(game.pokemon)
-game.party.forEach(pokemon => console.log(pokemon.name));
+game.party.forEach(pokemon => console.log(pokemon.name)); /// prints the pokemon's in the party starter game
+
+
+
+/*
+Exercise 9
+1. Can you print out all the starter Pokémon from the `pokemon` array?
+2. Think about how you can identify a starter Pokémon and then log their names.
+
+
+Solve Exercise 9 here:
+*/
+
+const game = {
+  party: [],
+  gyms: [
+    { location: "Pewter City", completed: false, difficulty: 1 },
+    { location: "Cerulean City", completed: false, difficulty: 2 },
+    { location: "Vermilion City", completed: false, difficulty: 3 },
+    { location: "Celadon City", completed: false, difficulty: 4 },
+    { location: "Fuchsia City", completed: false, difficulty: 5 },
+    { location: "Saffron City", completed: false, difficulty: 6 },
+    { location: "Cinnabar Island", completed: false, difficulty: 7 },
+    { location: "Viridian City", completed: false, difficulty: 8 },
+  ],
+  items: [
+    { name: "potion", quantity: 4 },
+    { name: "pokeball", quantity: 8 },
+    { name: "rare candy", quantity: 99 },
+  ],
+}
+game.difficulty = "Easy";
+
+game.party.push(pokemon[53], pokemon[0], pokemon[142])
+
+
+
+
+/////////////////////////////////////////////
+
+game.gyms.forEach((gym) => {
+  if (gym.difficulty < 3) {
+    gym.completed = true; ///////////////////// this code markes completed as true
+  }
+});
+
+////////////////////////////
+
+game.party.splice(0, 1, pokemon[game.party[0].number]) ////////////// this makes it evolve
+game.party.splice(1, 1, pokemon[game.party[1].number]) ////////////// this makes it evolve
+game.party.splice(2, 1, pokemon[game.party[2].number]) ////////////// this makes it evolve
+
+
+
+pokemon[53].starter = true // making sure the "starter always set true"
+pokemon[0].starter = true // making sure the "starter always set true"
+pokemon[142].starter = true // making sure the "starter always set true"
+
+game.party.forEach(pokemon => {
+   (pokemon.starter) 
+    console.log(pokemon.name);
+  }
+);
