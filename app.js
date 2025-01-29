@@ -646,7 +646,7 @@ Exercise 12
 
 Solve Exercise 12 here:
 */
-
+/*
 
 const game = {
   party: [],
@@ -732,3 +732,228 @@ game.gyms.forEach((gym) => {
 
 
   console.log(cry.item)
+
+
+
+
+
+game.gymStatus = () => {
+  const gymTally = { completed: 0, incomplete: 0 };
+
+  game.gyms.forEach(gym => {
+    if (gym.completed) {
+      gymTally.completed++;
+    } else {
+      gymTally.incomplete++;
+    }
+  });
+};
+
+game.gymStatus();
+
+const game = {
+  party: [],
+  gyms: [
+    { location: "Pewter City", completed: false, difficulty: 1 },
+    { location: "Cerulean City", completed: false, difficulty: 2 },
+    { location: "Vermilion City", completed: false, difficulty: 3 },
+    { location: "Celadon City", completed: false, difficulty: 4 },
+    { location: "Fuchsia City", completed: false, difficulty: 5 },
+    { location: "Saffron City", completed: false, difficulty: 6 },
+    { location: "Cinnabar Island", completed: false, difficulty: 7 },
+    { location: "Viridian City", completed: false, difficulty: 8 },
+  ],
+  items: [
+    { name: "potion", quantity: 4 },
+    { name: "pokeball", quantity: 8 },
+    { name: "rare candy", quantity: 99 },
+  ],
+}
+game.difficulty = "Easy";
+
+game.party.push(pokemon[53], pokemon[0], pokemon[142])
+
+
+
+
+/////////////////////////////////////////////
+
+game.gyms.forEach((gym) => {
+  if (gym.difficulty < 3) {
+    gym.completed = true; ///////////////////// this code markes completed as true
+  }
+});
+
+////////////////////////////
+
+game.party.splice(0, 1, pokemon[game.party[0].number]) ////////////// this makes it evolve
+game.party.splice(1, 1, pokemon[game.party[1].number]) ////////////// this makes it evolve
+game.party.splice(2, 1, pokemon[game.party[2].number]) ////////////// this makes it evolve
+
+
+
+pokemon[53].starter = true // making sure the "starter always set true"
+pokemon[0].starter = true // making sure the "starter always set true"
+pokemon[142].starter = true // making sure the "starter always set true"
+
+
+game.party.forEach(pokemon => {
+    (pokemon.starter) 
+   console.log(pokemon.name);
+ }
+);
+
+
+
+game.catchPokemon = function(pokemonObj) {
+  game.party.push(pokemonObj);
+}
+
+
+game.catchPokemon(cry);
+console.log(game.party);
+
+
+
+
+game.catchPokemon = (pokemonObj) => {
+  let cry = game.items.find(item => item.name === "cry");
+  game.party.push(pokemonObj);
+  cry.quantity--;
+};
+
+
+
+
+
+game.gyms.forEach((gym) => {
+  if (gym.difficulty < 6) {
+    gym.completed = true;                     ///////////////////// this code make gym.completed as true if dificlty less than 6
+  }
+});
+
+  /*
+
+  Exercise 13
+1. Create a `gymStatus` method in `game` to tally completed and incomplete gyms.
+2. How will you iterate through the `gyms` array and update the tally? Remember to log the final tally.
+
+This method should:
+  - Not accept any arguments.
+  - Initially create a constant `gymTally`, which is an object that has two 
+    properties: `completed` and `incomplete`, both of which are initially set to 0.
+  - Iterate through the objects in the `game.gyms` array and update the 
+    properties on `gymTally` as follows: 
+    - `completed` should count how many gyms in the array have a value of `true` 
+      for their `completed` property. 
+    - `incomplete` should count how many gyms in the array have a value of 
+      `false` for their `completed` property.
+  - Log the value of `gymTally`.
+  - The method should not return anything.
+
+For example, if five gym objects have a value of `true` on their `completed` property and three gym objects have a value of `false` on their `completed` property, the logged value would be: `{ completed: 5, incomplete: 3 }`.
+
+Solve Exercise 13 here:
+*/
+
+
+const game = {
+  party: [],
+  gyms: [
+    { location: "Pewter City", completed: false, difficulty: 1 },
+    { location: "Cerulean City", completed: false, difficulty: 2 },
+    { location: "Vermilion City", completed: false, difficulty: 3 },
+    { location: "Celadon City", completed: false, difficulty: 4 },
+    { location: "Fuchsia City", completed: false, difficulty: 5 },
+    { location: "Saffron City", completed: false, difficulty: 6 },
+    { location: "Cinnabar Island", completed: false, difficulty: 7 },
+    { location: "Viridian City", completed: false, difficulty: 8 },
+  ],
+  items: [
+    { name: "potion", quantity: 4 },
+    { name: "pokeball", quantity: 8 },
+    { name: "rare candy", quantity: 99 },
+  ],
+}
+game.difficulty = "Easy";
+
+game.party.push(pokemon[53], pokemon[0], pokemon[142])
+
+
+
+
+/////////////////////////////////////////////
+
+game.gyms.forEach((gym) => {
+  if (gym.difficulty < 3) {
+    gym.completed = true; ///////////////////// this code markes completed as true
+  }
+});
+
+////////////////////////////
+
+game.party.splice(0, 1, pokemon[game.party[0].number]) ////////////// this makes it evolve
+game.party.splice(1, 1, pokemon[game.party[1].number]) ////////////// this makes it evolve
+game.party.splice(2, 1, pokemon[game.party[2].number]) ////////////// this makes it evolve
+
+
+
+pokemon[53].starter = true // making sure the "starter always set true"
+pokemon[0].starter = true // making sure the "starter always set true"
+pokemon[142].starter = true // making sure the "starter always set true"
+
+
+game.party.forEach(pokemon => {
+    (pokemon.starter) 
+   console.log(pokemon.name);
+ }
+);
+
+
+
+game.catchPokemon = function(pokemonObj) {
+  game.party.push(pokemonObj);
+}
+
+
+game.catchPokemon(cry);
+console.log(game.party);
+
+
+
+
+game.catchPokemon = (pokemonObj) => {
+  let cry = game.items.find(item => item.name === "cry");
+  game.party.push(pokemonObj);
+  cry.quantity--;
+};
+
+
+
+
+
+game.gyms.forEach((gym) => {
+  if (gym.difficulty < 6) {
+    gym.completed = true;                     ///////////////////// this code make gym.completed as true if dificlty less than 6
+  }
+});
+
+
+
+
+
+//                                                           solve 13 below
+game.gymStatus = () => {
+  const gymTally = { completed: 0, incomplete: 0 };
+
+  game.gyms.forEach(gym => {
+    if (gym.completed) {
+      gymTally.completed++;
+    } else {
+      gymTally.incomplete++;
+    }
+  });
+};
+
+game.gymStatus();
+console.log(gymTally);
