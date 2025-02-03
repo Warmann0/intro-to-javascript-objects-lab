@@ -19,30 +19,30 @@ const game = {
 
 
   // Solve Exercise 1 here:
-  console.dir(pokemon, { maxArrayLength: null })
+  // console.dir(pokemon, { maxArrayLength: null })
  
 
 // Solve Exercise 2 here:
-console.log(pokemon[58])
+// console.log(pokemon[58])
 
 
 // Solve Exercise 3 here:
 game.difficulty = "Easy",
-console.log(game)
+// console.log(game)
 
 
 // Solve Exercise 4 here:
 pokemon[53].starter = true /// I had to choose my fav pokemon :D
 game.party = []
 game.party.push(pokemon[53])
-console.log(game.party)
+// console.log(game.party)
 
 // Solve Exercise 5 here:
 game.party.push(pokemon[53], pokemon[0], pokemon[142]) 
 pokemon[53].starter = true // making sure the "starter always set true"
 pokemon[0].starter = true // making sure the "starter always set true"
 pokemon[142].starter = true // making sure the "starter always set true"
-console.log(game.party)
+// console.log(game.party)
 
 // Solve Exercise 6 here:
 game.gyms.forEach((gym) => {
@@ -50,39 +50,38 @@ game.gyms.forEach((gym) => {
     gym.completed = true;
   }
 });
-console.log(game.gyms)
+// console.log(game.gyms)
 
 // Solve Exercise 7 here:
 game.party.splice(0, 1, pokemon[game.party[0].number])
 game.party.splice(1, 1, pokemon[game.party[1].number])
 game.party.splice(2, 1, pokemon[game.party[2].number])
-console.log(game.party)
+// console.log(game.party)
 
 // Solve Exercise 8 here:
-game.party.forEach(pokemon => console.log(pokemon.name)); /// prints the pokemon's in the party starter game
+// game.party.forEach(pokemon => console.log(pokemon.name)); /// prints the pokemon's in the party starter game
 
 // Solve Exercise 9 here:
 game.party.forEach(pokemon => {
   (pokemon.starter) 
-   console.log(pokemon.name);
+   // console.log(pokemon.name);
  }
 );
 
 // Solve Exercise 10 here:
-let cry = pokemon[50] 
+
 game.catchPokemon = function(pokemonObj) {
   game.party.push(pokemonObj);
-}
-game.catchPokemon(cry);
-console.log(game.party);
+};
+
 
 // Solve Exercise 11 here:
 game.catchPokemon = (pokemonObj) => {
-  let cry = game.items.find(item => item.name === "cry");
-  game.party.push(pokemonObj);
-  cry.quantity--;
+  let pokeball = game.items.find(item => item.name === "pokeball");
+  pokeball.quantity = pokeball.quantity -1;
 };
-console.log(cry.item)
+console.log(pokemon[53])
+
 
 // Solve Exercise 12 here:
 game.gyms.forEach((gym) => {
@@ -117,5 +116,4 @@ game.gyms.forEach((gym) => {
 });
 
 // Solve Exercise 16 here:
-console.log(game);
-
+// console.log(game);
